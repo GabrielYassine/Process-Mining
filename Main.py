@@ -1,6 +1,6 @@
 from PetriNet import PetriNet
-
-def main():
+from dependency_graph import log_as_dictionary
+def petrinet_test():
     p = PetriNet()
 
     p.add_place(1)  # add place with id 1
@@ -44,6 +44,19 @@ def main():
 
     # by the end of the execution there should be 2 tokens on the final place
     print(p.get_tokens(4))
+
+def dependency_graph_test():
+    log = """Task_G;case_1;user_6;2019-09-18 19:14:14
+    Task_G;case_2;user_6;2019-09-19 15:39:15
+    Task_H;case_1;user_2;2019-09-19 16:48:16
+    Task_E;case_2;user_7;2019-09-20 14:39:45
+    Task_F;case_2;user_8;2019-09-22 09:16:16"""
+
+    log_as_dictionary(log)
+
+def main():
+   dependency_graph_test()
+   
 
 if __name__ == '__main__':
   main()
