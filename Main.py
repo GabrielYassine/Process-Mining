@@ -1,5 +1,5 @@
 from PetriNet import PetriNet
-from dependency_graph import log_as_dictionary
+from dependency_graph import log_as_dictionary, dependency_graph_inline
 def petrinet_test():
     p = PetriNet()
 
@@ -52,7 +52,8 @@ def dependency_graph_test():
     Task_E;case_2;user_7;2019-09-20 14:39:45
     Task_F;case_2;user_8;2019-09-22 09:16:16"""
 
-    log_as_dictionary(log)
+    dependency_graph_inline(log)
+
 
 def main():
    dependency_graph_test()

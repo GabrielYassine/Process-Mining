@@ -20,9 +20,35 @@ def log_as_dictionary(log):
 
     for case in results:
         print(case, results[case])
+    return results 
         
 
-#def dependency_graph_inline(log):
+def dependency_graph_inline(log):
+    event_log = log_as_dictionary(log)
+
+    df = {}
+
+    for case_id in event_log:
+        events = event_log[case_id]
+
+        events = sorted(events, key=lambda event: event["timestamp"])
+
+        for i in range(len(events) - 1):
+            source = events[i]["task"]
+            target = events[i + 1]["task"]
+
+            if source not in df:
+                df[source] = {}
+
+            if target not in df[source]:
+                df[source][target] = 0
+
+            df[source][target] += 1
+    for source in df:
+        print(source, df[source])
+    return df
+    
+
 
 #def read_from_file(filename):
 
