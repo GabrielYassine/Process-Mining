@@ -1,5 +1,5 @@
 from PetriNet import PetriNet
-from dependency_graph import log_as_dictionary, dependency_graph_inline
+from dependency_graph import log_as_dictionary, dependency_graph_inline, read_from_file
 def petrinet_test():
     p = PetriNet()
 
@@ -57,7 +57,7 @@ def dependency_graph_test():
 
 
 def main():
-   dependency_graph_test()
+   read_from_file("example-log.xes")
    
 
 if __name__ == '__main__':

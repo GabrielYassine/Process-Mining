@@ -1,3 +1,5 @@
+import pm4py
+
 def log_as_dictionary(log):
     event_list = log.split("\n")
 
@@ -23,7 +25,7 @@ def log_as_dictionary(log):
     return results 
         
 
-def dependency_graph_inline(log):
+def dependency_graph_inline(event_log):
     df = {}
 
     for case_id in event_log:
@@ -48,7 +50,11 @@ def dependency_graph_inline(log):
     
 
 
-#def read_from_file(filename):
+def read_from_file(filename):
+    df = pm4py.read_xes(filename)
+
+    print(df.head())
+    print(df.columns)
 
 #def dependency_graph_file(log):
 
