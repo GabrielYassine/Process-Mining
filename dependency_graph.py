@@ -24,8 +24,6 @@ def log_as_dictionary(log):
         
 
 def dependency_graph_inline(log):
-    event_log = log_as_dictionary(log)
-
     df = {}
 
     for case_id in event_log:

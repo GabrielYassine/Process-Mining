@@ -51,8 +51,9 @@ def dependency_graph_test():
     Task_H;case_1;user_2;2019-09-19 16:48:16
     Task_E;case_2;user_7;2019-09-20 14:39:45
     Task_F;case_2;user_8;2019-09-22 09:16:16"""
+    event_log = log_as_dictionary(log)
 
-    dependency_graph_inline(log)
+    results = dependency_graph_inline(event_log)
 
 
 def main():
