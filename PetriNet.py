@@ -66,3 +66,10 @@ class PetriNet():
                 edge["target"]["tokens"] += 1
             elif edge["target"]["id"] == transition_id:
                 edge["source"]["tokens"] -= 1
+
+    def transition_name_to_id(self, name):
+        for transition in self.transitions:
+            if transition["name"] == name:
+                return transition["id"]
+
+        return None
